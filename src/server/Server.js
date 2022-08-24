@@ -1,6 +1,8 @@
 import express from 'express'
 import expressLogger from 'morgan'
 
+import { router } from '../routes/students.js'
+
 export default class Server {
   constructor(nodeEnv) {
     this.nodeEnv = nodeEnv
@@ -23,7 +25,8 @@ export default class Server {
   }
 
   #mountRouters() {
-    console.log('Express: No routers registered'.yellow)
+    this.app.use('/api/v1/students', router)
+    console.log('Express: All routers mounted'.green)
   }
 
   async #listen(port) {

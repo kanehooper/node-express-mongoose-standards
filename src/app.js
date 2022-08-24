@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+// eslint-disable-next-line no-unused-vars
 import colors from 'colors'
 import Database from './database/Database.js'
 import dotenv from 'dotenv'
